@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 70;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		82643AFE3017B47B00610D94 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82643AFD3017B47B00610D94 /* WidgetKit.framework */; };
+		82643B003017B47B00610D94 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82643AFF3017B47B00610D94 /* SwiftUI.framework */; };
+		82643B113017B47C00610D94 /* HedefYKSWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 82643AFB3017B47B00610D94 /* HedefYKSWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		82B714623017B826009CC54E /* Models/YKSModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000022B00000000000002 /* Models/YKSModels.swift */; };
+		82B714903017BA54009CC54E /* Managers/YKSWidgetSharedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift */; };
+		A10000012B00000000000001 /* HedefYKSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000012B00000000000001 /* HedefYKSApp.swift */; };
+		A10000022B00000000000002 /* Models/YKSModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000022B00000000000002 /* Models/YKSModels.swift */; };
+		A10000032B00000000000003 /* Managers/YKSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000032B00000000000003 /* Managers/YKSDataManager.swift */; };
+		A10000042B00000000000004 /* Views/AreaSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000042B00000000000004 /* Views/AreaSelectionView.swift */; };
+		A10000052B00000000000005 /* Views/DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000052B00000000000005 /* Views/DashboardView.swift */; };
+		A10000062B00000000000006 /* Views/TopicTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000062B00000000000006 /* Views/TopicTrackerView.swift */; };
+		A10000072B00000000000007 /* Views/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000072B00000000000007 /* Views/SettingsView.swift */; };
+		A10000082B00000000000008 /* Views/MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000082B00000000000008 /* Views/MainTabView.swift */; };
+		A10000092B00000000000009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B10000092B00000000000009 /* Assets.xcassets */; };
+		A10000102B00000000000010 /* Views/CurriculumEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000102B00000000000010 /* Views/CurriculumEditorView.swift */; };
+		A10000112B00000000000011 /* Views/HedefYKSWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000112B00000000000011 /* Views/HedefYKSWidget.swift */; };
+		A10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift */; };
+		A10000132B00000000000013 /* Views/SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000132B00000000000013 /* Views/SplashScreenView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		82643B0F3017B47C00610D94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = J10000002B00000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82643AFA3017B47B00610D94;
+			remoteInfo = HedefYKSWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		82643B123017B47C00610D94 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				82643B113017B47C00610D94 /* HedefYKSWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		82643AFB3017B47B00610D94 /* HedefYKSWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HedefYKSWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		82643AFD3017B47B00610D94 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		82643AFF3017B47B00610D94 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B10000012B00000000000001 /* HedefYKSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HedefYKSApp.swift; sourceTree = "<group>"; };
+		B10000022B00000000000002 /* Models/YKSModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/YKSModels.swift; sourceTree = "<group>"; };
+		B10000032B00000000000003 /* Managers/YKSDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers/YKSDataManager.swift; sourceTree = "<group>"; };
+		B10000042B00000000000004 /* Views/AreaSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/AreaSelectionView.swift; sourceTree = "<group>"; };
+		B10000052B00000000000005 /* Views/DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/DashboardView.swift; sourceTree = "<group>"; };
+		B10000062B00000000000006 /* Views/TopicTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/TopicTrackerView.swift; sourceTree = "<group>"; };
+		B10000072B00000000000007 /* Views/SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/SettingsView.swift; sourceTree = "<group>"; };
+		B10000082B00000000000008 /* Views/MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/MainTabView.swift; sourceTree = "<group>"; };
+		B10000092B00000000000009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B10000102B00000000000010 /* Views/CurriculumEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/CurriculumEditorView.swift; sourceTree = "<group>"; };
+		B10000112B00000000000011 /* Views/HedefYKSWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/HedefYKSWidget.swift; sourceTree = "<group>"; };
+		B10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers/YKSWidgetSharedStorage.swift; sourceTree = "<group>"; };
+		B10000132B00000000000013 /* Views/SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/SplashScreenView.swift; sourceTree = "<group>"; };
+		C10000002B00000000000000 /* HedefYKS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HedefYKS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		82643B153017B47C00610D94 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 82643AFA3017B47B00610D94 /* HedefYKSWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		82643B013017B47B00610D94 /* HedefYKSWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (82643B153017B47C00610D94 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = HedefYKSWidget; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		82643AF83017B47B00610D94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82643B003017B47B00610D94 /* SwiftUI.framework in Frameworks */,
+				82643AFE3017B47B00610D94 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D10000002B00000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		82643AFC3017B47B00610D94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82643AFD3017B47B00610D94 /* WidgetKit.framework */,
+				82643AFF3017B47B00610D94 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E10000002B00000000000000 = {
+			isa = PBXGroup;
+			children = (
+				E10000012B00000000000001 /* HedefYKS */,
+				82643B013017B47B00610D94 /* HedefYKSWidget */,
+				82643AFC3017B47B00610D94 /* Frameworks */,
+				E10000022B00000000000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E10000012B00000000000001 /* HedefYKS */ = {
+			isa = PBXGroup;
+			children = (
+				B10000012B00000000000001 /* HedefYKSApp.swift */,
+				B10000022B00000000000002 /* Models/YKSModels.swift */,
+				B10000032B00000000000003 /* Managers/YKSDataManager.swift */,
+				B10000042B00000000000004 /* Views/AreaSelectionView.swift */,
+				B10000052B00000000000005 /* Views/DashboardView.swift */,
+				B10000062B00000000000006 /* Views/TopicTrackerView.swift */,
+				B10000072B00000000000007 /* Views/SettingsView.swift */,
+				B10000082B00000000000008 /* Views/MainTabView.swift */,
+				B10000102B00000000000010 /* Views/CurriculumEditorView.swift */,
+				B10000112B00000000000011 /* Views/HedefYKSWidget.swift */,
+				B10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift */,
+				B10000132B00000000000013 /* Views/SplashScreenView.swift */,
+				B10000092B00000000000009 /* Assets.xcassets */,
+			);
+			path = HedefYKS;
+			sourceTree = "<group>";
+		};
+		E10000022B00000000000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C10000002B00000000000000 /* HedefYKS.app */,
+				82643AFB3017B47B00610D94 /* HedefYKSWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		82643AFA3017B47B00610D94 /* HedefYKSWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82643B163017B47C00610D94 /* Build configuration list for PBXNativeTarget "HedefYKSWidgetExtension" */;
+			buildPhases = (
+				82643AF73017B47B00610D94 /* Sources */,
+				82643AF83017B47B00610D94 /* Frameworks */,
+				82643AF93017B47B00610D94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				82643B013017B47B00610D94 /* HedefYKSWidget */,
+			);
+			name = HedefYKSWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = HedefYKSWidgetExtension;
+			productReference = 82643AFB3017B47B00610D94 /* HedefYKSWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F10000002B00000000000000 /* HedefYKS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = G10000002B00000000000000 /* Build configuration list for PBXNativeTarget "HedefYKS" */;
+			buildPhases = (
+				H10000002B00000000000000 /* Sources */,
+				D10000002B00000000000000 /* Frameworks */,
+				I10000002B00000000000000 /* Resources */,
+				82643B123017B47C00610D94 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82643B103017B47C00610D94 /* PBXTargetDependency */,
+			);
+			name = HedefYKS;
+			productName = HedefYKS;
+			productReference = C10000002B00000000000000 /* HedefYKS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		J10000002B00000000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					82643AFA3017B47B00610D94 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					F10000002B00000000000000 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = K10000002B00000000000000 /* Build configuration list for PBXProject "HedefYKS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = tr;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				tr,
+				Base,
+			);
+			mainGroup = E10000002B00000000000000;
+			productRefGroup = E10000022B00000000000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F10000002B00000000000000 /* HedefYKS */,
+				82643AFA3017B47B00610D94 /* HedefYKSWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82643AF93017B47B00610D94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		I10000002B00000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000092B00000000000009 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		82643AF73017B47B00610D94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000022B00000000000002 /* Models/YKSModels.swift in Sources */,
+				A10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		H10000002B00000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000012B00000000000001 /* HedefYKSApp.swift in Sources */,
+				82B714623017B826009CC54E /* Models/YKSModels.swift in Sources */,
+				A10000032B00000000000003 /* Managers/YKSDataManager.swift in Sources */,
+				A10000042B00000000000004 /* Views/AreaSelectionView.swift in Sources */,
+				A10000052B00000000000005 /* Views/DashboardView.swift in Sources */,
+				A10000062B00000000000006 /* Views/TopicTrackerView.swift in Sources */,
+				A10000072B00000000000007 /* Views/SettingsView.swift in Sources */,
+				A10000082B00000000000008 /* Views/MainTabView.swift in Sources */,
+				A10000102B00000000000010 /* Views/CurriculumEditorView.swift in Sources */,
+				A10000112B00000000000011 /* Views/HedefYKSWidget.swift in Sources */,
+				82B714903017BA54009CC54E /* Managers/YKSWidgetSharedStorage.swift in Sources */,
+				A10000132B00000000000013 /* Views/SplashScreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82643B103017B47C00610D94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82643AFA3017B47B00610D94 /* HedefYKSWidgetExtension */;
+			targetProxy = 82643B0F3017B47C00610D94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		82643B133017B47C00610D94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = HedefYKSWidget/HedefYKSWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HedefYKSWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HedefYKSWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smnkc.HedefYKS.HedefYKSWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		82643B143017B47C00610D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = HedefYKSWidget/HedefYKSWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HedefYKSWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HedefYKSWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smnkc.HedefYKS.HedefYKSWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		L10000002B00000000000000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = HedefYKS/HedefYKS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hedef YKS";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smnkc.HedefYKS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_DIGESTS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		L10000012B00000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = HedefYKS/HedefYKS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hedef YKS";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smnkc.HedefYKS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_DIGESTS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		M10000002B00000000000000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_COMPOUND_ASSIGNMENT_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 52NS2RR738;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		M10000012B00000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_COMPOUND_ASSIGNMENT_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 52NS2RR738;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		82643B163017B47C00610D94 /* Build configuration list for PBXNativeTarget "HedefYKSWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82643B133017B47C00610D94 /* Debug */,
+				82643B143017B47C00610D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		G10000002B00000000000000 /* Build configuration list for PBXNativeTarget "HedefYKS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				L10000002B00000000000000 /* Debug */,
+				L10000012B00000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		K10000002B00000000000000 /* Build configuration list for PBXProject "HedefYKS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				M10000002B00000000000000 /* Debug */,
+				M10000012B00000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = J10000002B00000000000000 /* Project object */;
+}
