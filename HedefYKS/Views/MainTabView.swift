@@ -18,11 +18,17 @@ struct MainTabView: View {
                 }
                 .tag(1)
             
+            AchievementsView()
+                .tabItem {
+                    Label("Başarımlar", systemImage: "trophy.fill")
+                }
+                .tag(2)
+            
             SettingsView()
                 .tabItem {
                     Label("Ayarlar", systemImage: "gearshape.fill")
                 }
-                .tag(2)
+                .tag(3)
         }
         .tint(dataManager.themeColor)
     }
