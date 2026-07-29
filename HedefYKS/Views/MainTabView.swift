@@ -5,31 +5,42 @@ struct MainTabView: View {
     @State private var selectedTab = 0
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            DashboardView(selectedTab: $selectedTab)
-                .tabItem {
-                    Label("Özet", systemImage: "chart.bar.fill")
-                }
-                .tag(0)
+        ZStack {
+            TabView(selection: $selectedTab) {
+                DashboardView(selectedTab: $selectedTab)
+                    .tabItem {
+                        Label("Özet", systemImage: "chart.bar.fill")
+                    }
+                    .tag(0)
+                
+                TopicTrackerView()
+                    .tabItem {
+                        Label("Konular", systemImage: "checkmark.square.fill")
+                    }
+                    .tag(1)
+                
+                AchievementsView()
+                    .tabItem {
+                        Label("Başarımlar", systemImage: "trophy.fill")
+                    }
+                    .tag(2)
+                
+                SettingsView()
+                    .tabItem {
+                        Label("Ayarlar", systemImage: "gearshape.fill")
+                    }
+                    .tag(3)
+            }
+            .tint(dataManager.themeColor)
             
-            TopicTrackerView()
-                .tabItem {
-                    Label("Konular", systemImage: "checkmark.square.fill")
+            // TEBRİK UYARI PENCERESİ (CELEBRATION OVERLAY)
+            if let badge = dataManager.newlyUnlockedBadge {
+                CelebrationOverlayView(badge: badge) {
+                    dataManager.newlyUnlockedBadge = nil
                 }
-                .tag(1)
-            
-            AchievementsView()
-                .tabItem {
-                    Label("Başarımlar", systemImage: "trophy.fill")
-                }
-                .tag(2)
-            
-            SettingsView()
-                .tabItem {
-                    Label("Ayarlar", systemImage: "gearshape.fill")
-                }
-                .tag(3)
+                .transition(.opacity)
+                .zIndex(999)
+            }
         }
-        .tint(dataManager.themeColor)
     }
 }

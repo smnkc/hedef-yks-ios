@@ -52,6 +52,17 @@ class YKSDataManager: ObservableObject {
     @Published var courses: [YKSCourse] = []
     @Published var topicProgress: [String: TopicState] = [:]
     @Published var selectedCourseIdToExpand: String? = nil
+    @Published var newlyUnlockedBadge: BadgeItem? = nil
+    
+    private var unlockedBadgeIDs: Set<String> {
+        get {
+            let array = UserDefaults.standard.stringArray(forKey: "unlocked_badge_ids") ?? []
+            return Set(array)
+        }
+        set {
+            UserDefaults.standard.set(Array(newValue), forKey: "unlocked_badge_ids")
+        }
+    }
     
     // Dinamik YKS Hedef Yılı (Telefon tarihine göre her 1 Temmuz'da otomatik sonraki yıla geçer)
     var targetExamYear: Int {
@@ -236,6 +247,139 @@ class YKSDataManager: ObservableObject {
         // Haptic Titreşim Geri Bildirimi
         let generator = UIImpactFeedbackGenerator(style: next == .completed ? .medium : .light)
         generator.impactOccurred()
+        
+        if next == .completed {
+            checkForNewAchievements()
+        }
+    }
+    
+    func checkForNewAchievements() {
+        let allBadges = computeAllBadges()
+        var currentUnlocked = unlockedBadgeIDs
+        
+        for badge in allBadges {
+            if badge.isUnlocked && !currentUnlocked.contains(badge.id) {
+                currentUnlocked.insert(badge.id)
+                self.unlockedBadgeIDs = currentUnlocked
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self.newlyUnlockedBadge = badge
+                }
+                break
+            }
+        }
+    }
+    
+    func computeAllBadges() -> [BadgeItem] {
+        var list: [BadgeItem] = []
+        
+        let completedTotal = completedTopicsCount()
+        let totalTotal = totalTopicsCount()
+        let overallPercent = overallPercentage
+        
+        let completedTYT = completedTopicsCount(for: "TYT")
+        let totalTYT = totalTopicsCount(for: "TYT")
+        
+        let aytSec = currentField == .dil ? "YDT" : "AYT"
+        let completedAYT = completedTopicsCount(for: aytSec)
+        let totalAYT = totalTopicsCount(for: aytSec)
+        
+        // 1. Genel
+        list.append(BadgeItem(
+            id: "badge-first-step",
+            title: "İlk Adım",
+            description: "İlk konunu başarıyla tamamla",
+            iconName: "flag.fill",
+            category: .milestones,
+            isUnlocked: completedTotal >= 1,
+            currentProgress: min(completedTotal, 1),
+            totalProgress: 1,
+            badgeColor: .blue
+        ))
+        
+        list.append(BadgeItem(
+            id: "badge-10-topics",
+            title: "Kararlı Öğrenci",
+            description: "En az 10 konuyu tamamla",
+            iconName: "flame.fill",
+            category: .milestones,
+            isUnlocked: completedTotal >= 10,
+            currentProgress: min(completedTotal, 10),
+            totalProgress: 10,
+            badgeColor: .orange
+        ))
+        
+        list.append(BadgeItem(
+            id: "badge-halfway",
+            title: "Yarı Yol",
+            description: "Tüm konuların %50'sini bitir",
+            iconName: "chart.line.uptrend.xyaxis",
+            category: .milestones,
+            isUnlocked: overallPercent >= 50.0 && totalTotal > 0,
+            currentProgress: min(completedTotal, totalTotal / 2),
+            totalProgress: max(1, totalTotal / 2),
+            badgeColor: .purple
+        ))
+        
+        list.append(BadgeItem(
+            id: "badge-tyt-master",
+            title: "TYT Şampiyonu",
+            description: "Tüm TYT konularını tamamla",
+            iconName: "trophy.fill",
+            category: .tyt,
+            isUnlocked: totalTYT > 0 && completedTYT == totalTYT,
+            currentProgress: completedTYT,
+            totalProgress: max(1, totalTYT),
+            badgeColor: .yellow
+        ))
+        
+        if totalAYT > 0 {
+            list.append(BadgeItem(
+                id: "badge-ayt-master",
+                title: "\(aytSec) Ustası",
+                description: "Tüm \(aytSec) konularını tamamla",
+                iconName: "crown.fill",
+                category: .ayt,
+                isUnlocked: completedAYT == totalAYT,
+                currentProgress: completedAYT,
+                totalProgress: totalAYT,
+                badgeColor: .red
+            ))
+        }
+        
+        list.append(BadgeItem(
+            id: "badge-yks-legend",
+            title: "YKS Efsanesi",
+            description: "Tüm YKS müfredatını bitir",
+            iconName: "star.fill",
+            category: .milestones,
+            isUnlocked: totalTotal > 0 && completedTotal == totalTotal,
+            currentProgress: completedTotal,
+            totalProgress: max(1, totalTotal),
+            badgeColor: Color.emerald
+        ))
+        
+        // 2. Ders Bazlı Rozetler
+        for course in courses {
+            let courseCompleted = course.topics.filter { getState(for: $0.id) == .completed }.count
+            let courseTotal = course.topics.count
+            let isUnlocked = courseTotal > 0 && courseCompleted == courseTotal
+            let category: BadgeCategory = course.section == "TYT" ? .tyt : .ayt
+            
+            list.append(BadgeItem(
+                id: "badge-course-\(course.id)",
+                title: "\(course.title) Ustası",
+                description: "\(course.title) tüm konularını bitir",
+                iconName: course.icon,
+                category: category,
+                isUnlocked: isUnlocked,
+                currentProgress: courseCompleted,
+                totalProgress: max(1, courseTotal),
+                badgeColor: themeColor
+            ))
+        }
+        
+        return list
     }
     
     func getState(for topicId: String) -> TopicState {

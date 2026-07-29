@@ -25,6 +25,7 @@
 		A10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift */; };
 		A10000132B00000000000013 /* Views/SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000132B00000000000013 /* Views/SplashScreenView.swift */; };
 		A10000142B00000000000014 /* Views/AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000142B00000000000014 /* Views/AchievementsView.swift */; };
+		A10000152B00000000000015 /* Views/CelebrationOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000152B00000000000015 /* Views/CelebrationOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		B10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers/YKSWidgetSharedStorage.swift; sourceTree = "<group>"; };
 		B10000132B00000000000013 /* Views/SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/SplashScreenView.swift; sourceTree = "<group>"; };
 		B10000142B00000000000014 /* Views/AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/AchievementsView.swift; sourceTree = "<group>"; };
+		B10000152B00000000000015 /* Views/CelebrationOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/CelebrationOverlayView.swift; sourceTree = "<group>"; };
 		C10000002B00000000000000 /* HedefYKS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HedefYKS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 				B10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift */,
 				B10000132B00000000000013 /* Views/SplashScreenView.swift */,
 				B10000142B00000000000014 /* Views/AchievementsView.swift */,
+				B10000152B00000000000015 /* Views/CelebrationOverlayView.swift */,
 				B10000092B00000000000009 /* Assets.xcassets */,
 			);
 			path = HedefYKS;
@@ -278,6 +281,7 @@
 				82B714903017BA54009CC54E /* Managers/YKSWidgetSharedStorage.swift in Sources */,
 				A10000132B00000000000013 /* Views/SplashScreenView.swift in Sources */,
 				A10000142B00000000000014 /* Views/AchievementsView.swift in Sources */,
+				A10000152B00000000000015 /* Views/CelebrationOverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
