@@ -67,7 +67,7 @@ struct AreaSelectionView: View {
         .onAppear {
             selected = dataManager.currentField
         }
-        .background(Color.white.ignoresSafeArea())
+        .background(Color(uiColor: .systemBackground).ignoresSafeArea())
     }
 }
 

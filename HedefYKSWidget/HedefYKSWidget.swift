@@ -46,13 +46,18 @@ struct YKSWidgetProvider: TimelineProvider {
         let month = calendar.component(.month, from: currentDate)
         let targetYear = month >= 7 ? year + 1 : year
         
-        var components = DateComponents()
-        components.year = targetYear
-        components.month = 6
-        components.day = 19
-        components.hour = 10
-        components.minute = 15
-        let examDate = calendar.date(from: components) ?? currentDate
+        let examDate: Date
+        if let timestamp = shared?.examTimestamp {
+            examDate = Date(timeIntervalSince1970: timestamp)
+        } else {
+            var components = DateComponents()
+            components.year = targetYear
+            components.month = 6
+            components.day = 19
+            components.hour = 10
+            components.minute = 15
+            examDate = calendar.date(from: components) ?? currentDate
+        }
         
         // Önümüzdeki 7 gün için her gece yarısı otomatik düşecek zaman çizelgesi girdileri üret
         for dayOffset in 0..<7 {
@@ -80,20 +85,28 @@ struct YKSWidgetProvider: TimelineProvider {
     private func fetchCurrentData() -> YKSWidgetEntry {
         let calendar = Calendar.current
         let now = Date()
+        let shared = YKSWidgetSharedStorage.shared.load()
+        
         let year = calendar.component(.year, from: now)
         let month = calendar.component(.month, from: now)
         let targetYear = month >= 7 ? year + 1 : year
         
-        var components = DateComponents()
-        components.year = targetYear
-        components.month = 6
-        components.day = 19
-        components.hour = 10
-        components.minute = 15
-        let examDate = calendar.date(from: components) ?? now
+        let examDate: Date
+        if let timestamp = shared?.examTimestamp {
+            examDate = Date(timeIntervalSince1970: timestamp)
+        } else {
+            var components = DateComponents()
+            components.year = targetYear
+            components.month = 6
+            components.day = 19
+            components.hour = 10
+            components.minute = 15
+            examDate = calendar.date(from: components) ?? now
+        }
+        
         let days = max(0, calendar.dateComponents([.day], from: now, to: examDate).day ?? 0)
         
-        if let shared = YKSWidgetSharedStorage.shared.load() {
+        if let shared = shared {
             return YKSWidgetEntry(
                 date: now,
                 daysRemaining: days,
@@ -125,12 +138,15 @@ struct HedefYKSWidgetEntryView : View {
     @Environment(\.widgetFamily) var family
 
     var body: some View {
-        switch family {
-        case .systemSmall:
-            smallWidgetView
-        default:
-            mediumWidgetView
+        Group {
+            switch family {
+            case .systemSmall:
+                smallWidgetView
+            default:
+                mediumWidgetView
+            }
         }
+        .widgetContainerBackground()
     }
     
     // 1. KÜÇÜK WIDGET (2x2)
@@ -162,13 +178,12 @@ struct HedefYKSWidgetEntryView : View {
             
             Spacer()
             
-            Text("\(entry.completedCount)/\(entry.totalCount - entry.completedCount) Konu Bitti")
+            Text("\(entry.completedCount)/\(entry.totalCount) Konu Bitti")
                 .font(.caption2)
                 .fontWeight(.bold)
                 .foregroundColor(.secondary)
         }
         .padding(14)
-        .background(Color.white)
     }
     
     // 2. ORTA WIDGET (4x2)
@@ -227,7 +242,7 @@ struct HedefYKSWidgetEntryView : View {
                 ProgressView(value: Double(entry.overallPercentage), total: 100)
                     .tint(entry.themeColor)
                 
-                Text("\(entry.completedCount)/\(entry.totalCount - entry.completedCount) Konu Bitti")
+                Text("\(entry.completedCount)/\(entry.totalCount) Konu Bitti")
                     .font(.caption2)
                     .fontWeight(.bold)
                     .foregroundColor(.secondary)
@@ -235,7 +250,6 @@ struct HedefYKSWidgetEntryView : View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(16)
-        .background(Color.white)
     }
 }
 
@@ -250,6 +264,20 @@ struct HedefYKSWidget: Widget {
         .configurationDisplayName("YKS Geri Sayım")
         .description("YKS sınavına kalan günü ve çalışma ilerlemenizi takip edin.")
         .supportedFamilies([.systemSmall, .systemMedium])
+    }
+}
+
+// MARK: - iOS 17+ Widget Container Background Support
+extension View {
+    @ViewBuilder
+    func widgetContainerBackground() -> some View {
+        if #available(iOS 17.0, *) {
+            self.containerBackground(for: .widget) {
+                Color(uiColor: .systemBackground)
+            }
+        } else {
+            self.background(Color(uiColor: .systemBackground))
+        }
     }
 }
 

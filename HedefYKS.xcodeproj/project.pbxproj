@@ -22,7 +22,6 @@
 		A10000082B00000000000008 /* Views/MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000082B00000000000008 /* Views/MainTabView.swift */; };
 		A10000092B00000000000009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B10000092B00000000000009 /* Assets.xcassets */; };
 		A10000102B00000000000010 /* Views/CurriculumEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000102B00000000000010 /* Views/CurriculumEditorView.swift */; };
-		A10000112B00000000000011 /* Views/HedefYKSWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000112B00000000000011 /* Views/HedefYKSWidget.swift */; };
 		A10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift */; };
 		A10000132B00000000000013 /* Views/SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000132B00000000000013 /* Views/SplashScreenView.swift */; };
 /* End PBXBuildFile section */
@@ -65,7 +64,6 @@
 		B10000082B00000000000008 /* Views/MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/MainTabView.swift; sourceTree = "<group>"; };
 		B10000092B00000000000009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B10000102B00000000000010 /* Views/CurriculumEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/CurriculumEditorView.swift; sourceTree = "<group>"; };
-		B10000112B00000000000011 /* Views/HedefYKSWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/HedefYKSWidget.swift; sourceTree = "<group>"; };
 		B10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers/YKSWidgetSharedStorage.swift; sourceTree = "<group>"; };
 		B10000132B00000000000013 /* Views/SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/SplashScreenView.swift; sourceTree = "<group>"; };
 		C10000002B00000000000000 /* HedefYKS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HedefYKS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,7 +134,6 @@
 				B10000072B00000000000007 /* Views/SettingsView.swift */,
 				B10000082B00000000000008 /* Views/MainTabView.swift */,
 				B10000102B00000000000010 /* Views/CurriculumEditorView.swift */,
-				B10000112B00000000000011 /* Views/HedefYKSWidget.swift */,
 				B10000122B00000000000012 /* Managers/YKSWidgetSharedStorage.swift */,
 				B10000132B00000000000013 /* Views/SplashScreenView.swift */,
 				B10000092B00000000000009 /* Assets.xcassets */,
@@ -275,7 +272,6 @@
 				A10000072B00000000000007 /* Views/SettingsView.swift in Sources */,
 				A10000082B00000000000008 /* Views/MainTabView.swift in Sources */,
 				A10000102B00000000000010 /* Views/CurriculumEditorView.swift in Sources */,
-				A10000112B00000000000011 /* Views/HedefYKSWidget.swift in Sources */,
 				82B714903017BA54009CC54E /* Managers/YKSWidgetSharedStorage.swift in Sources */,
 				A10000132B00000000000013 /* Views/SplashScreenView.swift in Sources */,
 			);
@@ -413,6 +409,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = HedefYKS/HedefYKS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Hedef YKS";
@@ -450,6 +447,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = HedefYKS/HedefYKS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Hedef YKS";

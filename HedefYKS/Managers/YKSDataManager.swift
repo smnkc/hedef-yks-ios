@@ -6,6 +6,7 @@ class YKSDataManager: ObservableObject {
     @AppStorage("selected_field") var selectedFieldRaw: String = YKSField.sayisal.rawValue {
         didSet {
             loadCurriculum()
+            syncWidget()
         }
     }
     
@@ -78,7 +79,11 @@ class YKSDataManager: ObservableObject {
     }
     
     // YKS Sınav Tarihi (Dinamik varsayılan)
-    @AppStorage("custom_exam_timestamp") var examTimestamp: Double = YKSDataManager.defaultExamTimestamp()
+    @AppStorage("custom_exam_timestamp") var examTimestamp: Double = YKSDataManager.defaultExamTimestamp() {
+        didSet {
+            syncWidget()
+        }
+    }
     
     var examDate: Date {
         get {
@@ -131,7 +136,8 @@ class YKSDataManager: ObservableObject {
             unstartedCount: unstarted,
             targetYear: targetYear,
             fieldTitle: currentField.title,
-            themeColorHex: themeColorHex
+            themeColorHex: themeColorHex,
+            examTimestamp: examTimestamp
         )
         YKSWidgetSharedStorage.shared.save(data: widgetData)
     }
@@ -153,6 +159,7 @@ class YKSDataManager: ObservableObject {
         if let encoded = try? JSONEncoder().encode(courses) {
             UserDefaults.standard.set(encoded, forKey: curriculumStorageKey)
         }
+        syncWidget()
         objectWillChange.send()
     }
     
